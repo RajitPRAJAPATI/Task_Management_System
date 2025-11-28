@@ -48,7 +48,7 @@ exports.postTask = async (req, res) => {
 
 exports.putTask = async (req, res) => {
   try {
-    const { description } = req.body;
+    const { description, completed } = req.body;
     if (!description) {
       return res.status(400).json({ status: false, msg: "Description of task not found" });
     }
@@ -66,7 +66,12 @@ exports.putTask = async (req, res) => {
       return res.status(403).json({ status: false, msg: "You can't update task of another user" });
     }
 
-    task = await Task.findByIdAndUpdate(req.params.taskId, { description }, { new: true });
+    const updateData = { description };
+    if (completed !== undefined) {
+      updateData.completed = completed;
+    }
+
+    task = await Task.findByIdAndUpdate(req.params.taskId, updateData, { new: true });
     res.status(200).json({ task, status: true, msg: "Task updated successfully.." });
   }
   catch (err) {

@@ -29,6 +29,22 @@
 
 ---
 
+## 🎬 Screenshots
+
+### Authentication
+| Signup Page |
+|:---:|
+| ![Signup](./screenshot/signup.png) |
+| Create a new account with name, email, and password |
+
+### Task Management
+| Write Task | Completed Tasks |
+|:---:|:---:|
+| ![Write Task](./screenshot/write%20task.png) | ![Completed Tasks](./screenshot/completed%20tasks%20menu.png) |
+| Add and manage your tasks | View completed tasks with status indicators |
+
+---
+
 ## Overview
 
 Zidio Task Manager is a modern, full-stack MERN application designed for efficient task management. It features JWT-based authentication, RESTful API architecture, Redux state management, and a responsive UI built with Tailwind CSS. Perfect for learning MERN stack development or as a foundation for advanced task management systems.
