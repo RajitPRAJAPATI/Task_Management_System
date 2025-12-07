@@ -1,4 +1,4 @@
-# 📋 Zidio Task Manager
+# 📋 Task Manager
 ### *A Modern Full-Stack Task Management Platform*
 
 [![React](https://img.shields.io/badge/React-18.1.0-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://reactjs.org/)
