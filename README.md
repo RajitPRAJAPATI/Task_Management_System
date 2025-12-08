@@ -624,7 +624,7 @@ npm install
 
 **Project Maintainer**: Rajit Prajapati  
 **GitHub**: [RajitPRAJAPATI](https://github.com/RajitPRAJAPATI)  
-**Email**: rajit.prajapati@zidio.com
+**Email**: rajitprajapati7@gmail.com
 
 For issues, feature requests, or questions:
 - 📝 Open an issue on GitHub
