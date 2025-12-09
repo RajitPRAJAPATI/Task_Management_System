@@ -47,7 +47,7 @@
 
 ## Overview
 
-Zidio Task Manager is a modern, full-stack MERN application designed for efficient task management. It features JWT-based authentication, RESTful API architecture, Redux state management, and a responsive UI built with Tailwind CSS. Perfect for learning MERN stack development or as a foundation for advanced task management systems.
+Task Manager is a modern, full-stack MERN application designed for efficient task management. It features JWT-based authentication, RESTful API architecture, Redux state management, and a responsive UI built with Tailwind CSS. Perfect for learning MERN stack development or as a foundation for advanced task management systems.
 
 ---
 
