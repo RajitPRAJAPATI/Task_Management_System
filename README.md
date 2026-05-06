@@ -1,4 +1,4 @@
-# 📋 Zidio Task Manager
+# 📋 Task Manager
 ### *A Modern Full-Stack Task Management Platform*
 
 [![React](https://img.shields.io/badge/React-18.1.0-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://reactjs.org/)
@@ -47,7 +47,7 @@
 
 ## Overview
 
-Zidio Task Manager is a modern, full-stack MERN application designed for efficient task management. It features JWT-based authentication, RESTful API architecture, Redux state management, and a responsive UI built with Tailwind CSS. Perfect for learning MERN stack development or as a foundation for advanced task management systems.
+Task Manager is a modern, full-stack MERN application designed for efficient task management. It features JWT-based authentication, RESTful API architecture, Redux state management, and a responsive UI built with Tailwind CSS. Perfect for learning MERN stack development or as a foundation for advanced task management systems.
 
 ---
 
@@ -624,7 +624,7 @@ npm install
 
 **Project Maintainer**: Rajit Prajapati  
 **GitHub**: [RajitPRAJAPATI](https://github.com/RajitPRAJAPATI)  
-**Email**: rajit.prajapati@zidio.com
+**Email**: rajitprajapati7@gmail.com
 
 For issues, feature requests, or questions:
 - 📝 Open an issue on GitHub
