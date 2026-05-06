@@ -31,8 +31,15 @@ app.use("/api/tasks", taskRoutes);
 app.use("/api/profile", profileRoutes);
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.resolve(__dirname, "../frontend/build")));
-  app.get("*", (req, res) => res.sendFile(path.resolve(__dirname, "../frontend/build/index.html")));
+  const fs = require("fs");
+  const buildPath = path.resolve(__dirname, "../frontend/build");
+  if (fs.existsSync(buildPath)) {
+    app.use(express.static(buildPath));
+    app.get("*", (req, res) => res.sendFile(path.resolve(buildPath, "index.html")));
+  } else {
+    console.warn("Frontend build not found at", buildPath);
+    app.get("*", (req, res) => res.json({ msg: "Backend API running. Frontend build not available." }));
+  }
 }
 
 const port = process.env.PORT || 5000;
