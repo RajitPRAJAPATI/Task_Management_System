@@ -12,8 +12,17 @@ app.use(express.json());
 app.use(cors());
 
 const mongoUrl = process.env.MONGODB_URL;
+if (!mongoUrl) {
+  console.error("ERROR: MONGODB_URL environment variable is not set!");
+  console.error("Please set MONGODB_URL before starting the app.");
+  process.exit(1);
+}
+
 mongoose.connect(mongoUrl, err => {
-  if (err) throw err;
+  if (err) {
+    console.error("MongoDB connection error:", err.message);
+    throw err;
+  }
   console.log("Mongodb connected...");
 });
 
