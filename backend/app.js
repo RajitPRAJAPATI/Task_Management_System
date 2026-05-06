@@ -30,7 +30,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/tasks", taskRoutes);
 app.use("/api/profile", profileRoutes);
 
-if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV === "production" && process.env.SERVE_FRONTEND === "true") {
   const fs = require("fs");
   const buildPath = path.resolve(__dirname, "../frontend/build");
   if (fs.existsSync(buildPath)) {
@@ -38,7 +38,6 @@ if (process.env.NODE_ENV === "production") {
     app.get("*", (req, res) => res.sendFile(path.resolve(buildPath, "index.html")));
   } else {
     console.warn("Frontend build not found at", buildPath);
-    app.get("*", (req, res) => res.json({ msg: "Backend API running. Frontend build not available." }));
   }
 }
 
