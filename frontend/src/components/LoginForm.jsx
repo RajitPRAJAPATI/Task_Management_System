@@ -78,6 +78,7 @@ const LoginForm = ({ redirectUrl }) => {
             <button className='bg-primary text-white px-4 py-2 font-medium hover:bg-primary-dark' onClick={handleSubmit}>Submit</button>
 
             <div className='pt-4'>
+              <Link to="/forgot-password" className='text-blue-400 block mb-2'>Forgot password?</Link>
               <Link to="/signup" className='text-blue-400'>Don't have an account? Signup here</Link>
             </div>
           </>

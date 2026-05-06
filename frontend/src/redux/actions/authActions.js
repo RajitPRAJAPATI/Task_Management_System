@@ -48,3 +48,17 @@ export const logout = () => (dispatch) => {
   dispatch({ type: LOGOUT });
   document.location.href = '/';
 }
+
+export const deleteAccount = (token) => async (dispatch) => {
+  try {
+    const { data } = await api.delete('/profile/delete', {
+      headers: { Authorization: token }
+    });
+    toast.success(data.msg);
+    dispatch(logout());
+  }
+  catch (error) {
+    const msg = error.response?.data?.msg || error.message;
+    toast.error(msg);
+  }
+}

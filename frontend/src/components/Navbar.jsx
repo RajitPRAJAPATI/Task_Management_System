@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { logout } from '../redux/actions/authActions';
+import { logout, deleteAccount } from '../redux/actions/authActions';
 
 const Navbar = () => {
 
@@ -16,6 +16,14 @@ const Navbar = () => {
     dispatch(logout());
   }
 
+  const handleDeleteAccount = () => {
+    const confirm = window.confirm("Delete your account permanently? This action cannot be undone.");
+    if (!confirm) return;
+    const token = localStorage.getItem('token');
+    if (!token) return;
+    dispatch(deleteAccount(token));
+  }
+
   return (
     <>
       <header className='flex justify-between sticky top-0 p-4 bg-white shadow-sm items-center'>
@@ -28,6 +36,7 @@ const Navbar = () => {
               <li className="bg-blue-500 text-white hover:bg-blue-600 font-medium rounded-md">
                 <Link to='/tasks/add' className='block w-full h-full px-4 py-2'> <i className="fa-solid fa-plus"></i> Add task </Link>
               </li>
+              <li className='py-2 px-3 cursor-pointer hover:bg-gray-200 transition rounded-sm' onClick={handleDeleteAccount}>Delete account</li>
               <li className='py-2 px-3 cursor-pointer hover:bg-gray-200 transition rounded-sm' onClick={handleLogoutClick}>Logout</li>
             </>
           ) : (
@@ -48,6 +57,7 @@ const Navbar = () => {
                 <li className="bg-blue-500 text-white hover:bg-blue-600 font-medium transition py-2 px-3">
                   <Link to='/tasks/add' className='block w-full h-full'> <i className="fa-solid fa-plus"></i> Add task </Link>
                 </li>
+                <li className='py-2 px-3 cursor-pointer hover:bg-gray-200 transition rounded-sm' onClick={handleDeleteAccount}>Delete account</li>
                 <li className='py-2 px-3 cursor-pointer hover:bg-gray-200 transition rounded-sm' onClick={handleLogoutClick}>Logout</li>
               </>
             ) : (

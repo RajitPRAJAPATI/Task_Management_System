@@ -28,7 +28,7 @@ export const validate = (group, name, value) => {
     }
   }
 
-  else if (group === "login") {
+  else if (group === "login" || group === "forgotPassword") {
     switch (name) {
       case "email": {
         if (!value) return "This field is required";
@@ -36,7 +36,19 @@ export const validate = (group, name, value) => {
         return null;
       }
       case "password": {
+        if (group === "login") {
+          if (!value) return "This field is required";
+        }
+        return null;
+      }
+      default: return null;
+    }
+  }
+  else if (group === "resetPassword") {
+    switch (name) {
+      case "password": {
         if (!value) return "This field is required";
+        if (value.length < 4) return "Password should be atleast 4 chars long";
         return null;
       }
       default: return null;
